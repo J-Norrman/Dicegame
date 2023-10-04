@@ -6,12 +6,9 @@ public class Main {
         System.out.println("Welcome to the game, press 1 to start ");
         System.out.println("1: Start");
         System.out.println("Anything else: Exit");
-
-
-        int gameStart = C_Scanner.getScanner().nextInt();
+        int gameStart = scanner.getScanner();
         if (gameStart == 1) {
             Game.game();
-
         } else {
             System.exit(1);
         }
@@ -20,13 +17,11 @@ public class Main {
         Random ranNum = new Random();
         int total = 0;
         int diceRandom;
-
         for (int i = 0; i < diceCount; i++) {
             diceRandom = ranNum.nextInt(6)+1;
             total = total + diceRandom;
             System.out.print(diceRandom);
             System.out.print(" ");
-
         }
         System.out.println(" ");
         player.score = total;

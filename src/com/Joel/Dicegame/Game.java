@@ -7,16 +7,16 @@ import static com.Joel.Dicegame.Main.rollDice;
 public class Game {
     static void game() {
         System.out.println("Enter player count: ");
-        int playerCount = C_Scanner.getScanner().nextInt();
+        int playerCount = scanner.intScanner();
         ArrayList<Player> playerList = new ArrayList<>();
         for (int i = 0; i < playerCount; i++) {
             System.out.println("Enter player " + (i + 1) + " name");
-            playerList.add(new Player(C_Scanner.getScanner().next()));
+            playerList.add(new Player(scanner.stringScanner()));
         }
         System.out.println("How many dice are you playing with?");
-        int diceCount = C_Scanner.getScanner().nextInt();
+        int diceCount = scanner.intScanner();
         System.out.println("How many rounds are you playing?");
-        int roundCount = C_Scanner.getScanner().nextInt();
+        int roundCount = scanner.intScanner();
         for (int i = 0; i < roundCount; i++) {
             Player winner = null;
             for (Player player : playerList) {

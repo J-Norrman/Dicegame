@@ -1,8 +1,7 @@
 package com.Joel.Dicegame;
 
 import java.util.ArrayList;
-
-import static com.Joel.Dicegame.Main.rollDice;
+import java.util.Random;
 
 public class Game {
     static void game() {
@@ -10,7 +9,7 @@ public class Game {
         int playerCount = scanner.intScanner();
         ArrayList<Player> playerList = new ArrayList<>();
         for (int i = 0; i < playerCount; i++) {
-            System.out.println("Enter player " + (i + 1) + " name");
+            System.out.println("Enter player " + (i + 1) + " name:");
             playerList.add(new Player(scanner.stringScanner()));
         }
         System.out.println("How many dice are you playing with?");
@@ -47,5 +46,18 @@ public class Game {
             }
             System.out.println("-----------------------------------------------------");
         }
+    }
+    static void rollDice(int diceCount, Player player) {
+        Random ranNum = new Random();
+        int total = 0;
+        int diceRandom;
+        for (int i = 0; i < diceCount; i++) {
+            diceRandom = ranNum.nextInt(6) + 1;
+            total = total + diceRandom;
+            System.out.print(diceRandom);
+            System.out.print(" ");
+        }
+        System.out.println(" ");
+        player.score = total;
     }
 }
